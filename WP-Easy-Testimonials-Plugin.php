@@ -18,18 +18,19 @@ Text Domain: wpetp
 function wpetp_enqueue_style() {
     wp_enqueue_style( 'owl.carousel', plugins_url( 'css/owl.carousel.min.css', __FILE__ ) );
 	wp_enqueue_style( 'owl.theme', plugins_url( 'css/owl.theme.min.css', __FILE__ ) );
-    wp_enqueue_style('wpetp-style',plugins_url( 'css/wpetp-style.css',__FILE__ ));
-   
+	wp_enqueue_style( 'wpetp-style', plugins_url( 'css/wpetp-style.css', __FILE__ ) );
 }
 add_action( 'wp_enqueue_scripts', 'wpetp_enqueue_style' );
+
 
 /**
  * wpetp enqueue scripts
  */
 function wpetp_enqueue_scripts() {
-    wp_enqueue_script( 'owl.carousel', plugins_url( 'js/owl.carousel.min.js', __FILE__ ), array(), '1.0.0', true );
+	wp_enqueue_script( 'owl.carousel', plugins_url( 'js/owl.carousel.min.js', __FILE__ ), array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'wpetp_enqueue_scripts' );
+
 
 /**
  * Enqueue a custom stylesheet in the WordPress admin.
@@ -41,17 +42,17 @@ function wpetp_enqueue_admin_style() {
 	wp_enqueue_script( 'cp-active', plugins_url('/js/cp-active.js', __FILE__), array('jquery'), '', true );
 }
 add_action( 'admin_enqueue_scripts', 'wpetp_enqueue_admin_style' );
-/*
-wpetp custom post type
-*/
-if ( ! function_exists('wpetp_custom_post_type') ) {
 
+
+/**
+ * wpetp custom post
+ */
+if ( ! function_exists('wpetp_custom_post_type') ) {
 // Register Custom Post Type
 function wpetp_custom_post_type() {
-
 	$labels = array(
 		'name'                  => _x( 'Testimonials', 'Post Type General Name', 'wpetp' ),
-		'singular_name'         => _x( 'Testimonial', 'Post Type Singular Name', 'wpetp' ),
+		'singular_name'         => _x( 'Testimonial Type', 'Post Type Singular Name', 'wpetp' ),
 		'menu_name'             => __( 'Testimonials', 'wpetp' ),
 		'name_admin_bar'        => __( 'Post Type', 'wpetp' ),
 		'archives'              => __( 'Item Archives', 'wpetp' ),
@@ -79,10 +80,10 @@ function wpetp_custom_post_type() {
 		'filter_items_list'     => __( 'Filter items list', 'wpetp' ),
 	);
 	$args = array(
-		'label'                 => __( 'Testimonial', 'wpetp' ),
-		'description'           => __( 'Testimonials Description', 'wpetp' ),
+		'label'                 => __( 'Testimonial Type', 'wpetp' ),
+		'description'           => __( 'Testimonial Description', 'wpetp' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -95,15 +96,15 @@ function wpetp_custom_post_type() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'Testimonial', $args );
-
+	register_post_type( 'testimonial', $args );
 }
 add_action( 'init', 'wpetp_custom_post_type', 0 );
-
 }
+
 /**
-wpetp post loop
-*/
+ * wpetp post loop
+ */
+
 function wpetp_testimonial_loop(){ 
 ob_start(); ?>
 <div id="testimonial-slider" class="owl-carousel">
@@ -163,6 +164,7 @@ ob_start(); ?>
       </ul>
     </div>
   </div>
+
   <?php }
 	} else {
 		// no posts found
@@ -171,16 +173,19 @@ ob_start(); ?>
 	wp_reset_postdata();
 	?>
 </div>
+
 <?php }
 
 /**
  * Remove auto paragraph
  */	
+
 remove_filter('the_excerpt', 'wpautop');
 
 /**
 	jQuary Settings.
 **/
+
 function wpetp_testimonial_script(){?>
 <script>
 $(document).ready(function(){
@@ -204,7 +209,7 @@ add_action('wp_footer', 'wpetp_testimonial_script', 100);
  * wpetp shortcode
  */	
 function wpetp_testimonial_shortcode() {
-    add_shortcode( 'wpetpTESTIMONIAL', 'wpetp_testimonial_loop' );
+    add_shortcode( 'WPETPTESTIMONIAL', 'wpetp_testimonial_loop' );
 }
 add_action( 'init', 'wpetp_testimonial_shortcode' );
 

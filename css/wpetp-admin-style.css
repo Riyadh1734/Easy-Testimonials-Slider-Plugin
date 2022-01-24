@@ -23,3 +23,8 @@
 	overflow: hidden;
 	margin-bottom: 10px;
 }
+#your-profile label+a, label {
+	vertical-align: middle;
+	float: left;
+	min-width: 120px;
+}
