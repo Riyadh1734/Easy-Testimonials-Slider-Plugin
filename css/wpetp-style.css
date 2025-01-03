@@ -1,3 +1,6 @@
+/* epizy testimonial css */
+
+ 
 .testimonial{
     background: #fff;
     text-align: center;
@@ -16,7 +19,7 @@
 }
 .testimonial .description:before{
     content: "\f10e";
-    font-family: "Font Awesome 5 Free";
+    font-family: "wpetpFontAwesome";
     font-weight: 900;
     display: inline-block;
     float: left;

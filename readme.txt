@@ -1,11 +1,12 @@
 ﻿===Easy Testimonials Slider Plugin ===
-Contributors: saju4wordpress
+Contributors: saju4wordpress, wecodexwp
+Donate Link: https://www.buymeacoffee.com/riyadh1734
 Author URI:  http://sajuahmed.epizy.com/
 Plugin URI: https://wordpress.org/plugins/epizy-easy-testimonials
 Tags: wp testimonial, star ratings, testimonial formtes, timonial slider, testimonials.
 Requires at least: 5.2
-Tested up to: 5.9
-Stable tag: 2.2
+Tested up to: 6.6.2
+Stable tag: 2.6
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +86,26 @@ Yes.
 = 2.2 =
 
 * fixing Shortcode
+
+= 2.3 =
+
+* Compatible with WordPress Version
+
+= 2.3.1 =
+
+* Compatible with WordPress Version
+
+= 2.4 =
+
+* Compatible with WordPress Version
+
+= 2.5 =
+
+* Compatible with WordPress Version
+
+= 2.6 =
+
+* Compatible with WordPress Version
 
 == Upgrade notice ==
 N/A.

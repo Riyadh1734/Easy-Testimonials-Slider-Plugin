@@ -3,11 +3,11 @@
 Plugin Name:Easy Testimonials Slider Plugin
 Plugin URI: https://wordpress.org/plugins/epizy-easy-testimonials/
 Description: This plugin is very helpfull to add interesting testimonials of your client’s. Make your customer recommendations, your ladder to success with this WP plugin.
-Version:     2.0
+Version: 2.5
 Requires at least: 5.2
-Author:      Riyadh Ahmed
+Author: Riyadh Ahmed
 Author URI:  http://sajuahmed.epizy.com/
-License:     GPL v2 or Later
+License: GPL v2 or Later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Text Domain: wpetp
 */
